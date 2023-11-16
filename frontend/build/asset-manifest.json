@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9385a61a.css",
+    "main.js": "/static/js/main.a098f238.js",
+    "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
+    "static/media/1.jpg": "/static/media/1.5efc631d868d315cae3a.jpg",
+    "static/media/hotdeal.png": "/static/media/hotdeal.a9359af376a40c09726f.png",
+    "index.html": "/index.html",
+    "main.9385a61a.css.map": "/static/css/main.9385a61a.css.map",
+    "main.a098f238.js.map": "/static/js/main.a098f238.js.map",
+    "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9385a61a.css",
+    "static/js/main.a098f238.js"
+  ]
+}
