@@ -13,7 +13,7 @@ const App = () => {
     
       <Header />
       
-      <main className='py-4' style={{marginTop: '50px'}}>
+      <main className='py-4' style={{marginTop: '100px'}}>
         <Container>
           <Outlet />
         </Container>

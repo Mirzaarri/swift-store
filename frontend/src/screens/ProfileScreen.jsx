@@ -27,17 +27,23 @@ const ProfileScreen = () => {
 
   const { data: orders, isLoading, error } = useGetMyOrderQuery();
 
-  useEffect(()=>{
-    if(userInfo) {
-      setName(userInfo.name);
-      setEmail(userInfo.email);
+  useEffect(() => {
+    if (userInfo) {
+      setName(userInfo.name || '');  // Use an empty string as a default value if userInfo.name is undefined
+      setEmail(userInfo.email || '');  // Use an empty string as a default value if userInfo.email is undefined
     }
-  }, [userInfo, userInfo.name, userInfo.email]);
+  }, [userInfo]);
+  
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    if( password !== confirmPassword){
-      toast.error('Password do not match')
+    if (!userInfo) {
+      // Handle the case where userInfo is not defined
+      return;
+    }
+  
+    if (password !== confirmPassword) {
+      toast.error('Password does not match');
     } else {
       try {
         const res = await updateProfile({ _id: userInfo._id, name, email, password }).unwrap();
@@ -47,7 +53,8 @@ const ProfileScreen = () => {
         toast.error(err?.data?.message || err.error);
       }
     }
-  }
+  };
+  
 
   return (
     <>
@@ -110,18 +117,18 @@ const ProfileScreen = () => {
               {orders.map((order) => (
                 <tr key={order._id}>
                   <td>{order._id}</td>
-                  <td>{order.createdAt.substring(0, 10)}</td>
+                  <td>{order.createdAt}</td>
                   <td>{order.totalPrice}</td>
                   <td>
                     {order.isPaid ? (
-                      order.paidAt.substring(0, 10)
+                      order.paidAt
                     ) : (
                       <FaTimes style={{ color: 'red' }} />
                     )}
                   </td>
                   <td>
                     {order.isDelivered ? (
-                      order.deliveredAt.substring(0, 10)
+                      order.deliveredAt
                     ) : (
                       <FaTimes style={{ color: 'red' }} />
                     )}

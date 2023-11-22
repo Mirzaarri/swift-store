@@ -1,0 +1,27 @@
+.contact-page {
+  background-color: #f8f9fa;
+  padding: 40px 0;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-group {
+  width: 80%;
+}
+
+.form-control {
+  margin-bottom: 15px;
+}
+
+.button {
+  width: 100%;
+}

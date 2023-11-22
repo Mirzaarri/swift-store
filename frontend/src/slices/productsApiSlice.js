@@ -5,7 +5,7 @@ export const productsApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getProducts: builder.query({
       query: ({ keyword, pageNumber }) => ({
-        url: PRODUCTS_URL,
+        url: PRODUCTS_URL, //localhost:3000/api/products  localhost coming from proxy and api/products coming from constants
         params: {
           pageNumber,
           keyword
